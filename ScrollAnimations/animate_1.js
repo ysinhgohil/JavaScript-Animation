@@ -1,9 +1,9 @@
 
 (function(){
 
-Fx.Scroll = new Class({
+JS.Scroll = new Class({
 
-	Extends: Fx,
+	Extends: JS,
 
 	options: {
 		offset: {x: 0, y: 0},
@@ -36,7 +36,7 @@ Fx.Scroll = new Class({
 
 	compute: function(from, to, delta){
 		return [0, 1].map(function(i){
-			return Fx.compute(from[i], to[i], delta);
+			return JS.compute(from[i], to[i], delta);
 		});
 	},
 
@@ -138,7 +138,7 @@ Fx.Scroll = new Class({
 });
 
 //<1.2compat>
-Fx.Scroll.implement({
+JS.Scroll.implement({
 	scrollToCenter: function(){
 		return this.toElementCenter.apply(this, arguments);
 	},
